@@ -31,7 +31,7 @@ def register(request):
     "main/register.html",
     context={"form":form})
 
-def logout(request):
-    return render(request=request,
-        template_name="main/logout.html",
-        context={"tutorials": Tutorial.objects.all})
+def logout_req(request):
+    logout(request)
+    messages.info(request, "logged out successfully")
+    return redirect("main:homepage")
