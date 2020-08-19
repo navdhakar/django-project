@@ -30,3 +30,8 @@ def register(request):
     return render(request,
     "main/register.html",
     context={"form":form})
+
+def logout(request):
+    return render(request=request,
+        template_name="main/logout.html",
+        context={"tutorials": Tutorial.objects.all})
